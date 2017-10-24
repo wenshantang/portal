@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Puff>
+
+	<constant>
+		<!-- 是否使用Puff的开发模式。 正式上线后改成false -->
+		<property name="devMode" value="true" />
+		<!-- JSP页面放置路径 WebRoot下使用"/" WEB-INF下使用"/WEB-INF" -->
+		<property name="fileViewPath" value="/WEB-INF/jsp/" />
+		<!-- 异常处理：404 500 等, 默认处理异常的类：com.puff.exception.PuffErrorHandler-->
+		<property name="errorHandler" value="cn.aresoft.cms.portal.fhcf.constant.ErrorHandle" />
+	</constant>
+
+	<scan>
+		<property name="bean" value="cn.aresoft.cms.portal.fhcf,cn.aresoft.fhcf.common" />
+		<property name="controller" value="cn.aresoft.cms.portal.fhcf" />
+	</scan>
+
+
+	<dispatcher class="com.puff.web.dispatcher.Zh_CN_GetDispatcher" />
+	
+	<!-- <dispatcher class="com.puff.plugin.cache.redis.RedisDispatcher" /> -->
+	
+<!-- 本地环境 开始-->
+	<!-- redis缓存 -->
+	<plugin name="CachePlugin" class="com.puff.plugin.cache.CachePlugin">
+		<property name="cache.L1.provider" value="ehcache" />
+		<property name="cache.L2.provider" value="redis" />
+		<property name="cache.broadcast" value="true" />
+		<property name="cache.broadcast.channel" value="Redis" />
+		<property name="redis.host" value="127.0.0.1" />
+		<property name="redis.port" value="6379" />
+		<property name="redis.timeout" value="3000" />
+		<property name="redis.database" value="1" />
+		<property name="redis.maxIdle" value="3000" />
+		<property name="redis.maxWait" value="6000" />
+		<property name="redis.minEvictableIdleTimeMillis" value="864000000" />
+		<property name="redis.minIdle" value="1000" />
+		<property name="redis.numTestsPerEvictionRun" value="10" />
+		<property name="redis.softMinEvictableIdleTimeMillis" value="10" />
+		<property name="redis.timeBetweenEvictionRunsMillis" value="300000" />
+	</plugin>
+<!-- 本地环境 结束-->
+	
+ <plugin name="DistributedSessionPlugin" class="com.puff.plugin.session.DistributedSessionPlugin" /> 
+
+</Puff>

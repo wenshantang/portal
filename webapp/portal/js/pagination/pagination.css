@@ -1,0 +1,29 @@
+@charset "utf-8";      
+.pages{text-align:center; margin:15px auto;}
+.pages .span{font-size:14px; color:#a0a0a0; padding: 0px 3px;}
+span.current{color:#000}
+.pages a {
+    text-decoration: none;
+	border: 1px solid #AAE;
+	color: #15B;
+}
+
+.pages a, .pages span {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.pages .current {
+    background: #26B;
+    color: #fff;
+	border: 1px solid #AAE;
+}
+
+.pages .current.prev, .pages .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+

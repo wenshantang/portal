@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript" src="layer.m.js"></script>
+<script type="text/javascript" src="popbox.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<script type="text/javascript">
+function loginSuccess(){
+	//模拟登录请求
+	var index = Popbox.loading("正在登录中。。。");
+	jQuery.ajax({
+		url : "https://www.dc.com/ab/gl/login",
+		type : "POST",
+		success : function(result) {
+			layer.close(index);
+			Popbox.success("登录成功");
+		},
+		error : function() {    
+	        layer.close(index);
+	    }
+	});
+	
+}
+
+function loginFailure(){
+	//模拟登录请求
+	var index = Popbox.loading("正在登录中。。。");
+	jQuery.ajax({
+		url : "https://www.dc.com",
+		type : "POST",
+		success : function(result) {
+			layer.close(index);
+			Popbox.success("登录成功");
+		},
+		error : function() {    
+	        layer.close(index);
+	        Popbox.error("登录失败");
+	    }
+	});
+	
+}
+</script>
+<body>
+
+	<input type="button" onclick="Popbox.tip('用户名不存在')" value="错误提示2秒关闭"/><br>
+	<input type="button" onclick="Popbox.loading()" value="loading......"/><br>
+	<input type="button" onclick="loginSuccess()" value="登录成功"/><br>
+	<input type="button" onclick="loginFailure()" value="登录失败"/><br>
+	<input type="button" onclick="Popbox.success()" value="成功！！！"/><br>
+	<input type="button" onclick="Popbox.error()" value="失败！！！"/><br>
+	<input type="button" onclick="Popbox.sureWithBtn()" value="提示框，并显示1个确认按钮"/><br>
+	<input type="button" onclick="Popbox.confirm()" value="确认框"/><br>
+
+</body>
+</html>

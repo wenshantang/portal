@@ -1,0 +1,51 @@
+package cn.aresoft.cms.portal.fhcf.controller.web;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.puff.framework.annotation.Controller;
+import com.puff.framework.annotation.Inject;
+import com.puff.framework.utils.StringUtil;
+import com.puff.web.mvc.PuffContext;
+import com.puff.web.view.View;
+import com.puff.web.view.ViewFactory;
+
+import cn.aresoft.common.model.RetMsg;
+import cn.aresoft.fhcf.common.cache.FundNavCache;
+import cn.aresoft.fhcf.common.model.product.FundNav;
+import cn.aresoft.fhcf.common.service.FundNavService;
+@Controller(value = "/fundnav")
+public class FundNavController{
+	@Inject 
+	private FundNavService fundNavService;
+	@Inject
+	private FundNavCache fundNavCache;
+   public View fundchart() {
+			String procode = PuffContext.getParameter("procode"); //基金代码
+			String date_condition = PuffContext.getParameter("date_condition"); //时间条件自定义时间
+			String starttime = PuffContext.getParameter("starttime"); //开始时间
+			String endtime = PuffContext.getParameter("endtime"); //结束时间
+			//净值列表
+			List<FundNav> list = new ArrayList<FundNav>();
+			if(StringUtil.notEmpty(date_condition)){
+				list=fundNavCache.get("fundnav_"+date_condition+"_"+procode);//获取缓存
+				if(list==null){
+					list =fundNavService.fundchart(procode, date_condition);
+					if(list.size()>0){
+						fundNavCache.cache("fundnav_"+date_condition+"_"+procode,list);//存缓存
+					}
+					
+				}
+			}else{
+				list=fundNavCache.get("fundnav_"+starttime+"_"+endtime+"_"+procode);
+				if(list==null){
+					list =fundNavService.fundchart(procode, starttime,endtime);
+					if(list.size()>0){
+						fundNavCache.cache("fundnav_"+starttime+"_"+endtime+"_"+procode,list);
+					}
+				}
+			}
+			return ViewFactory.json(RetMsg.success(list));
+	}
+
+}
+
