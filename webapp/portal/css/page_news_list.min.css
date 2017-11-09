@@ -2386,10 +2386,27 @@
 	width: 156px;
 	color: #000;
 	padding-left: 44px;
-	text-decoration: none
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .FrontNewsCategory_tree01-d1_c1 .menu-first ul li.menu-none a:hover {
+	background: url(../images/lmcdbj.jpg) bottom center no-repeat;
+	width: 156px;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+	font-size: 14px;
+	color: #fff;
+	font-family: "微软雅黑";
+	width: 156px;
+	text-align: left;
+	padding-left: 44px
+}
+
+
+
+.FrontNewsCategory_tree01-d1_c1 .menu-first ul li.menu-none a.menu-text1.hover {
 	background: url(../images/lmcdbj.jpg) bottom center no-repeat;
 	width: 156px;
 	height: 40px;
