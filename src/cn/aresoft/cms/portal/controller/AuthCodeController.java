@@ -1,4 +1,4 @@
-package cn.aresoft.cms.portal.fhcf.controller.web;
+package cn.aresoft.cms.portal.controller;
 
 import java.util.Random;
 

@@ -6,7 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.Cookie;
 
-import cn.aresoft.cms.portal.fhcf.tag.BaseTag;
+import cm.aresoft.cms.portal.plugin.htmltag.BaseTag;
 
 public class CookTag extends BaseTag{
 

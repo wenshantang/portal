@@ -1,7 +1,8 @@
-package cn.aresoft.cms.portal.fhcf.controller;
+package cn.aresoft.cms.portal.controller;
 
-import cn.aresoft.fhcf.common.cache.LoginCache;
-import cn.aresoft.fhcf.common.cache.UserCache;
+import cn.aresoft.cms.portal.cache.LoginCache;
+import cn.aresoft.cms.portal.cache.UserCache;
+
 import com.puff.framework.annotation.Inject;
 
 public class BaseController {

@@ -1,16 +1,16 @@
-package cn.aresoft.cms.portal.fhcf.controller.web;
+package cn.aresoft.cms.portal.controller;
 
-import cn.aresoft.cms.portal.fhcf.interceptor.FormSubmitTokenInterceptor;
-import cn.aresoft.cms.portal.fhcf.util.DateUtil;
+import cn.aresoft.cms.portal.accessIntercept.FormSubmitTokenInterceptor;
+import cn.aresoft.cms.portal.model.Umsg;
+import cn.aresoft.cms.portal.service.UmsgService;
 import cn.aresoft.common.model.RetCode;
 import cn.aresoft.common.model.RetMsg;
-import cn.aresoft.fhcf.common.model.msg.Umsg;
-import cn.aresoft.fhcf.common.service.UmsgService;
 
 import com.puff.framework.annotation.BeanScope;
 import com.puff.framework.annotation.Before;
 import com.puff.framework.annotation.Controller;
 import com.puff.framework.annotation.Inject;
+import com.puff.framework.utils.DateUtil;
 import com.puff.framework.utils.StringUtil;
 import com.puff.web.mvc.PuffContext;
 import com.puff.web.view.View;
@@ -45,7 +45,7 @@ public class UmsgController {
 		u.setEmail(email);
 		u.setType_id(type_id);
 		u.setType(type);
-		String dateStr = DateUtil.formatTimeStringTwo();
+		String dateStr = "";
 		u.setCreate_time(dateStr);
 		u.setUpdate_time(dateStr);
 		umsgService.insert(u);

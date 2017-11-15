@@ -7,12 +7,12 @@
 		<!-- JSP页面放置路径 WebRoot下使用"/" WEB-INF下使用"/WEB-INF" -->
 		<property name="fileViewPath" value="/WEB-INF/jsp/" />
 		<!-- 异常处理：404 500 等, 默认处理异常的类：com.puff.exception.PuffErrorHandler-->
-		<property name="errorHandler" value="cn.aresoft.cms.portal.fhcf.constant.ErrorHandle" />
+		<property name="errorHandler" value="cn.aresoft.cms.portal.constant.ErrorHandle" />
 	</constant>
 
 	<scan>
-		<property name="bean" value="cn.aresoft.cms.portal.fhcf,cn.aresoft.fhcf.common" />
-		<property name="controller" value="cn.aresoft.cms.portal.fhcf" />
+		<property name="bean" value="cn.aresoft.cms.portal,cn.aresoft.common" />
+		<property name="controller" value="cn.aresoft.cms.portal" />
 	</scan>
 
 
