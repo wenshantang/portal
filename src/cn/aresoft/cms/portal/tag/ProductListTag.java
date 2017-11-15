@@ -10,18 +10,20 @@ public class ProductListTag extends BaseTag {
 	private ProductListCache productListCache = BeanFactory.getBean("productListCache");
 	@Override
 	public void render() {
-		String pro_style = getAttr("pro_style", "");//'产品类型：固定、浮动、海外',
-		String pro_direction = getAttr("pro_direction", "");//产品风向，是用于钱码头产品的分类
-		String i_prostatus = getAttr("i_prostatus", "");//开放状态：1：在售 2：即将开放 3：已售罄 
+		String type = getAttr("type", "");//产品类型（1：自组网产品，2：有中心产品，3.自组网+有中心双网合一产品）
+		String status = getAttr("status", "");//状态：1：待审核，2：审核通过
+		String isHot = getAttr("isHot", "");//是否热推 1：是热推
+		String name = getAttr("name", "");//产品名称
     	ProductInfo  p = new ProductInfo();
-    	/*p.setPro_style(pro_style);
-    	p.setPro_direction(pro_direction);
-    	p.setI_prostatus(i_prostatus);*/
-    	PageRecord<ProductInfo> datas = productListCache.get("prolist_"+pro_style+"_"+pro_direction+"_"+i_prostatus+"_"+getCommonParam().getPage());
+    	p.setType(type);
+    	p.setStatus(status);
+    	p.setIsHot(isHot);
+    	p.setName(name);
+    	PageRecord<ProductInfo> datas = productListCache.get("prolist_"+type+"_"+status+"_"+isHot+"_"+name+"_"+getCommonParam().getPage());
     	if(datas==null){
     		datas=productInfoService.paging(p, getCommonParam());
     		if(datas.getDataList().size()>0){
-    			productListCache.cache("prolist_"+pro_style+"_"+pro_direction+"_"+i_prostatus+"_"+getCommonParam().getPage(), datas);
+    			productListCache.cache("prolist_"+type+"_"+status+"_"+isHot+"_"+name+"_"+getCommonParam().getPage(), datas);
     		}
     	}
     	this.binds(datas);

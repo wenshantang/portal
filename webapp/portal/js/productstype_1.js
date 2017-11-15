@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 		//$(".nav ul li").children("ul").hide();
 		$(".nav").find("li").not(":has(ul)").children("a").css({textDecoration:"none"})
 		.click(function(){
@@ -62,4 +62,4 @@ $(document).ready(function(){
 
 //<![CDATA[
 
-//]]>
+//]]>*/
