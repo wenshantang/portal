@@ -14,7 +14,9 @@
 #box_left {
 	width: 100%
 }
-
+#box_top {
+	background: #e3e5e4;
+}
 #box_top_sub1 {
 	width: 1174px;
 	margin: auto

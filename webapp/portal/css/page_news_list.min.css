@@ -14,7 +14,9 @@
 #box_left {
 	width: 100%
 }
-
+#box_top {
+	background: #e3e5e4;
+}
 #box_top_sub1 {
 	width: 1174px;
 	margin: auto
@@ -4536,4 +4538,121 @@
 
 .FrontProducts_list01_view3-d1_c1 .content1 {
 	width: 180px
+}
+
+
+
+
+.FrontMessages_customizeEmit01-d1_c1 {
+	width: 100%;
+	margin: 0 auto;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	clear: both;
+	overflow: hidden;
+	text-align: left
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .success {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	clear: both;
+	margin-top: -470px;
+	height: 40px;
+	padding-top: 100px;
+	padding-bottom: 330px;
+	position: relative;
+	z-index: 888;
+	background: #fff
+}
+.FrontMessages_customizeEmit01-d1_c1 .success p {
+	font-weight: normal;
+	font-size: 15px;
+	height: 32px;
+	line-height: 32px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .success p img {
+	width: 32px;
+	height: 32px;
+	vertical-align: middle
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .success p span {
+	text-align: left;
+	margin-left: 10px;
+	font-weight: normal;
+	vertical-align: middle;
+	line-height: 32px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 img {
+	vertical-align: middle
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .input {
+	border: 1px solid #ddd;
+	height: 20px;
+	line-height: 20px;
+	width: 170px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .text-oper1 {
+	clear: both;
+	margin-bottom: 5px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .input-gray {
+	border: 1px solid #ddd;
+	line-height: 20px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .textarea {
+	border: 1px solid #ddd;
+	width: 400px;
+	height: 80px;
+	font-size: 12px;
+	margin: 4px 0
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .tips {
+	padding-left: 10px;
+	color: #a0a0a0
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .fontred {
+	color: #f60;
+	float: left;
+	width: 11px!important;
+	_width: 8px!important
+}
+
+.FrontMessages_customizeEmit01-d1_c1 .fontnone {
+	float: left;
+	width: 11px!important;
+	_width: 8px!important
+}
+.FrontMessages_customizeEmit01-d1_c1 table {
+	margin-top: 20px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 table th,.FrontMessages_customizeEmit01-d1_c1 table td {
+	height: 30px;
+	padding-bottom: 16px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 table .info td {
+	padding-bottom: 30px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 table .button-position td {
+	padding-top: 20px
+}
+
+.FrontMessages_customizeEmit01-d1_c1 table th {
+	text-align: right;
+	font-weight: normal;
+	width: 15%;
+	font-size: 13px
 }
