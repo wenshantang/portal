@@ -12,22 +12,7 @@ $(window).load(function(){
 
 var menuHighlight = {};
 menuHighlight.exec = function(){
-    if (l.indexOf('solutions') > -1) {
-        $('#menu .solutions a').addClass('active');
-        return $('#menu').data("normal", "solutions");
-    }
-    if (l.indexOf('products') > -1) {
-        $('#menu .products a').addClass('active');
-        return $('#menu').data("normal", "products");
-    }
-    if (l.indexOf('services') > -1) {
-        $('#menu .services a').addClass('active');
-        return $('#menu').data("normal", "services");
-    }
-    if (l.indexOf('about-huawei') > -1) {
-        $('#menu .about-huawei a').addClass('active');
-        return $('#menu').data("normal", "about-huawei");
-    }
+
 };
 
 //----------------------------------------------
@@ -48,13 +33,13 @@ mouse_events.mouse_over = function(){
         flag = true;    
 
         var p = this.className;
-        timeout = setTimeout(function(){mouse_events.aShow(p)}, 500);
+        timeout = setTimeout(function(){mouse_events.aShow(p)}, 0);
     });
 };
 
 mouse_events.aShow = function(classname){
 
-    $('#menu .'+classname+' a').addClass('hover');  
+   // $('#menu .'+classname+' a').addClass('hover');  
 };
 
 var dateOut;
@@ -117,6 +102,7 @@ menuPopup.ini = function(){
     }, menuPopup.hide);
     
     menuPopup.obj.hover(menuPopup.stop, menuPopup.hide);
+   
     
 };
 menuPopup.stop = function(){
@@ -132,6 +118,7 @@ menuPopup.hide = function(){
         menuPopup.obj.css('top', '-1000px');
         menuHighlight.exec();
     }, 10);
+    $(this).removeclass('hover');
 }
 
 

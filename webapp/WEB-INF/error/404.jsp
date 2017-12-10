@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%-- <%@ page language="java" pageEncoding="UTF-8"%>
 <%
 	String ctx = request.getContextPath();
 	request.setAttribute("ctx", ctx);
@@ -7,8 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=${ctx}/error/404" />
+<meta http-equiv="refresh" content="0; url=${ctx}/404" />
 </head>
 <body>
 </body>
-</html>
+</html> --%>
