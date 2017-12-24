@@ -2,9 +2,9 @@
 <Puff>
 	<!-- 测试环境  start -->
 	<dataBase class="com.puff.jdbc.datasource.druid.DruidDataSourceFactory">
-	    <property name="url" value="jdbc:mysql://localhost:3306/website?useUnicode=true&amp;characterEncoding=utf-8" />
+	    <property name="url" value="jdbc:mysql://116.62.203.161:3306/website?useUnicode=true&amp;characterEncoding=utf-8" />
 	    <property name="username" value="root" />
-		<property name="password" value="123456" />
+		<property name="password" value="root" />
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="filters" value="stat" />
 		<property name="initialSize" value="5" />
