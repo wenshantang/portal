@@ -9,7 +9,6 @@ import com.puff.jdbc.core.PageRecord;
 import com.puff.jdbc.core.SqlBuilder;
 
 import cn.aresoft.cms.portal.model.Recruit;
-import cn.aresoft.cms.portal.model.Umsg;
 import cn.aresoft.cms.portal.service.RecruitService;
 import cn.aresoft.common.model.CommonParam;
 import cn.aresoft.common.service.impl.CenterServiceImpl;
@@ -18,7 +17,7 @@ import cn.aresoft.common.service.impl.CenterServiceImpl;
 public class RecruitServiceImpl extends CenterServiceImpl<Recruit>implements RecruitService {
 	@Override
 	public PageRecord<Recruit> paging(Recruit r, CommonParam param) {
-		StringBuffer sql = new StringBuffer(SqlBuilder.buildQuerySQL(Umsg.class));
+		StringBuffer sql = new StringBuffer(SqlBuilder.buildQuerySQL(Recruit.class));
 		List<Object> condition = new ArrayList<Object>();
 		sql.append(" where 1=1 ");
 		if(StringUtil.empty(param.getSort())){

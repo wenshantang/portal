@@ -31,6 +31,12 @@ public class Recruit extends BaseModel {
 		private String file_url;//文件附件
 		@Column
 		private String create_time;//创建时间
+	    @Column
+	    private String status;//是否有意向
+	    @Column
+	    private String remark;//备注
+	    @Column
+	    private String update_time;//修改时间
         
         public String getId() {
             return id;
@@ -102,6 +108,36 @@ public class Recruit extends BaseModel {
         
         public void setCreate_time(String create_time) {
             this.create_time = create_time;
+        }
+
+        
+        public String getStatus() {
+            return status;
+        }
+
+        
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        
+        public String getRemark() {
+            return remark;
+        }
+
+        
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        
+        public String getUpdate_time() {
+            return update_time;
+        }
+
+        
+        public void setUpdate_time(String update_time) {
+            this.update_time = update_time;
         }
 	
 		

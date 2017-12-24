@@ -5,6 +5,9 @@ import java.util.List;
 import org.beetl.core.GroupTemplate;
 import org.beetl.core.Template;
 
+import com.puff.framework.utils.ListUtil;
+import com.puff.ioc.BeanFactory;
+
 import cm.aresoft.cms.portal.plugin.TemplateContentSync;
 import cm.aresoft.cms.portal.start.StartPortal;
 import cn.aresoft.cms.common.cache.CmsArticleCache;
@@ -24,16 +27,10 @@ import cn.aresoft.cms.common.service.CmsModelService;
 import cn.aresoft.cms.common.service.CmsSiteConfigService;
 import cn.aresoft.cms.common.service.CmsTemplateService;
 import cn.aresoft.cms.common.service.CmsTopicService;
-import cn.aresoft.cms.portal.tag.H5TopicArticleTag;
-import cn.aresoft.cms.portal.tag.ProductArticleTag;
 import cn.aresoft.cms.portal.tag.ProductInfoTag;
 import cn.aresoft.cms.portal.tag.ProductListTag;
-import cn.aresoft.cms.portal.tag.ProductReportTag;
 import cn.aresoft.cms.portal.tag.SysDictTag;
 import cn.aresoft.cms.portal.tag.TokenTag;
-
-import com.puff.framework.utils.ListUtil;
-import com.puff.ioc.BeanFactory;
 
 public class StartCD implements StartPortal {
 
@@ -111,22 +108,10 @@ public class StartCD implements StartPortal {
 		groupTemplate.registerTag("sysdict_list", SysDictTag.class);
 		// 表单重复提交校验
 		groupTemplate.registerTag("token", TokenTag.class);
-		//与产品关联的文章
-		groupTemplate.registerTag("pro_articles", ProductArticleTag.class);
 		//产品列表
 		groupTemplate.registerTag("pro_Lists", ProductListTag.class);
-		//h5产品列表
-	//	groupTemplate.registerTag("h5_pro_Lists", H5ProductListTag.class);
-		//h5文章
-		groupTemplate.registerTag("h5_topic_article", H5TopicArticleTag.class);
-		//基金净值列表
-	//	groupTemplate.registerTag("nav_Lists", FundNavTag.class);
 		//产品详情页
 		groupTemplate.registerTag("product", ProductInfoTag.class);
-		//产品净值详情(用于产品详情页的基金净值以及今年以来的净值)
-	//	groupTemplate.registerTag("navs", FundNavInfoTag.class);
-		//产品报告列表
-		groupTemplate.registerTag("reports", ProductReportTag.class);
 	}
 
 	@Override

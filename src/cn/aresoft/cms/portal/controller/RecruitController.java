@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.puff.framework.annotation.BeanScope;
-import com.puff.framework.annotation.Before;
 import com.puff.framework.annotation.Controller;
 import com.puff.framework.annotation.Inject;
 import com.puff.framework.utils.DateTime;
@@ -27,10 +26,8 @@ import com.puff.web.view.ViewFactory;
 import cn.aresof.ftp.FtpClient;
 import cn.aresof.ftp.model.FtpServer;
 import cn.aresof.ftp.service.FtpServerService;
-import cn.aresoft.cms.portal.accessIntercept.FormSubmitTokenInterceptor;
 import cn.aresoft.cms.portal.model.Recruit;
 import cn.aresoft.cms.portal.service.RecruitService;
-import cn.aresoft.cms.portal.service.UmsgService;
 import cn.aresoft.common.model.RetCode;
 import cn.aresoft.common.model.RetMsg;
 import cn.aresoft.manager.model.sys.SysFile;
@@ -44,8 +41,7 @@ import cn.aresoft.manager.service.sys.SysManagerConfigService;
  */
 @Controller(value = "/portal/recruit", scope = BeanScope.SINGLETON)
 public class RecruitController {
-	@Inject 
-	private UmsgService umsgService;
+
     private static final Log log = LogFactory.get();
     @Inject
     private SysFileService sysFileService;
@@ -103,8 +99,9 @@ public class RecruitController {
 	        map.put("message", message);
 	        return map;
 	    }
-	public View upload() {
-	        FileUpload file = PuffContext.getFile("file");
+	@SuppressWarnings("null")
+    public View upload() {
+	        FileUpload file = PuffContext.getFile("imgFile");
 	        if (file == null)
 	            return ViewFactory.json(getError("请选择文件"));
 	        SysManagerConfig managerConfig = sysManagerConfigService.querySysManagerConfig();
