@@ -1,13 +1,11 @@
 package cn.aresoft.cms.portal.tag;
-import cn.aresoft.cms.portal.cache.ProductListCache;
-import cn.aresoft.cms.portal.model.ProductInfo;
-import cn.aresoft.cms.portal.service.ProductInfoService;
-
 import com.puff.ioc.BeanFactory;
 import com.puff.jdbc.core.PageRecord;
+
+import cn.aresoft.cms.portal.model.ProductInfo;
+import cn.aresoft.cms.portal.service.ProductInfoService;
 public class ProductListTag extends BaseTag {
 	private ProductInfoService productInfoService = BeanFactory.getBean("productInfoService");
-	private ProductListCache productListCache = BeanFactory.getBean("productListCache");
 	@Override
 	public void render() {
 		String type = getAttr("type", "");//产品类型（1：自组网产品，2：有中心产品，3.自组网+有中心双网合一产品）
@@ -19,13 +17,7 @@ public class ProductListTag extends BaseTag {
     	p.setStatus(status);
     	p.setIsHot(isHot);
     	p.setName(name);
-    	PageRecord<ProductInfo> datas = productListCache.get("prolist_"+type+"_"+status+"_"+isHot+"_"+name+"_"+getCommonParam().getPage());
-    	if(datas==null){
-    		datas=productInfoService.paging(p, getCommonParam());
-    		if(datas.getDataList().size()>0){
-    			productListCache.cache("prolist_"+type+"_"+status+"_"+isHot+"_"+name+"_"+getCommonParam().getPage(), datas);
-    		}
-    	}
+    	PageRecord<ProductInfo>  datas=productInfoService.paging(p, getCommonParam());
     	this.binds(datas);
     	this.doBodyRender();
     	}
